@@ -10,11 +10,11 @@
 <body>
 
     <div id="app">
-        <ul>
-        <li v-for="bear in bears" v-bind:class="{'strike' : bear.status}">
-            {{ bear.name }}
-        </li>
-    </ul>
+        <form action="POST">
+            <!-- <button v-on:click.prevent = "clicker">Click</button> -->
+            <input type="text" v-model="message" @keyup.enter = "clicker">
+             <button @click.prevent = "clicker">Click</button>
+        </form>
 
 
     </div>
@@ -23,30 +23,12 @@
 new Vue({
 el: "#app",
 data: {
-    bears: [
-       {
-           name: 'Grizzly',
-           status: false
-       },
-
-       {
-           name: 'Polar',
-           status: false
-       },
-
-       {
-           name: 'Panda',
-           status: true
-       },
-
-       {
-           name: 'Gubach',
-           status: false
-       }
-
-    ], 
-
-
+    message: ''
+},
+methods: {
+    clicker: function(){
+        console.log(this.message);
+    }
 }
 });
     </script>
