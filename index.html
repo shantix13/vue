@@ -10,19 +10,43 @@
 <body>
 
     <div id="app">
-        {{message}}
+        <ul>
+        <li v-for="bear in bears" v-bind:class="{'strike' : bear.status}">
+            {{ bear.name }}
+        </li>
+    </ul>
 
 
-        <input type="text" v-model="message">
-
-        <pre>{{$data | json}}</pre>
     </div>
     <script src="/script.js"></script>
     <script>
 new Vue({
 el: "#app",
 data: {
-    message: "Hello World!"
+    bears: [
+       {
+           name: 'Grizzly',
+           status: false
+       },
+
+       {
+           name: 'Polar',
+           status: false
+       },
+
+       {
+           name: 'Panda',
+           status: true
+       },
+
+       {
+           name: 'Gubach',
+           status: false
+       }
+
+    ], 
+
+
 }
 });
     </script>
