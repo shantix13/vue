@@ -4,3 +4,15 @@ body {
     font-size: 18px;
     color: #272727;
 }
+
+.grey {
+    background-color: grey;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.yellow {
+    background-color: yellow;
+}

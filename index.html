@@ -12,7 +12,14 @@
 <body>
 
     <div id="app">
+
+        <span @click="changeText">Текст</span>
+
         <p>{{ title }}</p>
+        <p :class="styleCss">Цвет строки</p>
+
+        <input type="text" @input="styleCss = $event.target.value">
+
 
     </div>
     <script src="/script.js"></script>
